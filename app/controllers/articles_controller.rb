@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(params[:article])
 
     @article.save
-
+    audit @article.inspect
 
     redirect_to article_path(@article)
   end
